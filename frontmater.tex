@@ -1,0 +1,56 @@
+% SIAM Shared Information Template
+% This is information that is shared between the main document and any
+% supplement. If no supplement is required, then this information can
+% be included directly in the main document.
+
+
+% Packages and macros go here
+\usepackage{lipsum}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{algorithmic}
+\usepackage{amssymb}
+\usepackage{cleveref}
+\ifpdf
+  \DeclareGraphicsExtensions{.eps,.pdf,.png,.jpg}
+\else
+  \DeclareGraphicsExtensions{.eps}
+\fi
+
+% Declare title and authors, without \thanks
+\newcommand{\TheTitle}{Domain Decomposition Based High Performance Uncertainty Quantification Algorithms \\ At Extreme Scales}
+%\newcommand{\TheTitle}{Domain Decomposition Based High Performance Uncertainty Quantification Algorithms For Extreme Scale Stochastic Systems}
+\newcommand{\TheAuthors}{Desai A., Khalil M., Pettit C., Poirel D. and Sarkar A.}
+
+% Sets running headers as well as PDF title and authors
+%\headers{\TheTitle}{\TheAuthors}
+\headers{DDM Based HPUQ Algorithms at Extreme Scales}{Desai A., et. al.}
+
+% Title. If the supplement option is on, then "Supplementary Material"
+% is automatically inserted before the title.
+
+\title{{\TheTitle}}%\thanks{This work was funded by ***}}
+
+% Authors: full names plus addresses.
+\author{
+  Ajit Desai\thanks{Carleton University, Canada}
+    %(\email{ajit.desai@carleton.ca}, \url{***}).}
+  \and
+  Mohammad Khalil\thanks{Sandia National Lab., USA}
+  \and
+  Chris Pettit \thanks{United States Naval Academy, USA}
+  \and
+  Dominique Poirel \thanks{Royal Military College, Canada}
+  \and
+  Abhijit Sarkar\footnotemark[1]
+}
+
+\usepackage{amsopn}
+\DeclareMathOperator{\diag}{diag}
+
+
+%%% Local Variables:
+%%% mode:latex
+%%% TeX-master: "ex_article"
+%%% End:

@@ -1,0 +1,443 @@
+%-------abhi commneted below----------
+%\documentclass[12pt,letterpaper]{report}
+%\usepackage{lineno}
+%\newtheorem{theorem}{Theorem}[chapter]
+%\newtheorem{definition}{Definition}[chapter]
+%\usepackage[colorlinks=true,pdftex,bookmarks=true,bookmarksnumbered=true,breaklinks=true]{hyperref}
+%\usepackage{cite}
+%-------------------------------------
+
+\usepackage{amsmath,amsthm}
+\usepackage{amsfonts,amssymb,latexsym}
+\usepackage[mathscr]{euscript}
+% \usepackage[dvips]{graphicx}
+% \usepackage{epstopdf}
+\usepackage{times}
+%\usepackage[sort&compress,square,comma]{natbib}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{cancel}
+\usepackage{placeins}
+\usepackage{acronym}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage{appendix}
+\usepackage{afterpage,amsbsy}
+% \usepackage{eufrak}
+\usepackage[center]{caption}
+\usepackage[cal=boondox]{mathalfa}
+
+%\usepackage[letterpaper=true,dvipdfm=true,hypertex=true,hyperindex=true,urlcolor=red]{hyperref}
+
+
+\usepackage{arydshln}
+\usepackage{subfig}
+\usepackage{rotating}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+\usepackage{algorithmicx}
+\usepackage[ruled]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{algpascal}
+\usepackage{cleveref}
+%\usepackage[noabbrev]{cleveref}
+%\usepackage[noabbrev,capitalize]{cleveref}
+%\usepackage[sort]{natbib}  $$ useful for ascending the reference
+
+%\usepackage[sort,nocompress]{cite}
+\usepackage{setspace}
+\usepackage{listings}
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=single,
+  xleftmargin=\parindent,
+  language=Fortran,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customm}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=single,
+  xleftmargin=\parindent,
+  language=Matlab,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customp}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=single,
+  xleftmargin=\parindent,
+  language=Python,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+% \usepackage{lmodern}
+% \usepackage{minted}
+
+%%https://tex.stackexchange.com/questions/256849/cleveref-change-behaviour-of-cref-to-use-the-abbreviated-form
+\Crefname{equation}{Eq.}{Eqs.}
+\Crefname{figure}{Fig.}{Figs.}
+\Crefname{tabular}{Tab.}{Tabs.}
+\Crefname{section}{Sec.}{Secs.}
+
+% \setlist[itemize]{leftmargin=*}
+% \setlength{\captionmargin}{0.5in}
+% \setlength{\abovecaptionskip}{6pt}
+% \setlist[itemize]{leftmargin=*}
+%
+% \theoremstyle{definition}
+%
+%
+% \setlength{\pdfpagewidth}{8.5in}
+% \setlength{\pdfpageheight}{11in}
+% \setlength{\paperwidth}{8.5in}
+% \setlength{\paperheight}{11in}
+%
+% \setlength{\hoffset}{0.1in}
+% \setlength{\oddsidemargin}{0in}
+% \setlength{\evensidemargin}{0in}
+% \setlength{\textwidth}{6.3in}
+% \setlength{\marginparsep}{0in}
+% \setlength{\marginparpush}{0in}
+%
+% \setlength{\voffset}{-0.3in}
+% \setlength{\topmargin}{0in}
+% \setlength{\headheight}{0.11in}
+% \setlength{\headsep}{0.265in}
+% \setlength{\textheight}{9in}%8.625
+% \setlength{\footskip}{0.375in}
+%
+% \setlength{\parindent}{5mm}
+% \pagestyle{myheadings}
+% \pagenumbering{arabic}
+% \linespread{1.1}
+% \def\ssp{\def\baselinestretch{1.0}\large\normalsize}
+% \def\hsp{\def\baselinestretch{1.4}\large\normalsize}
+% \setcounter{tocdepth}{2}
+
+\DeclareMathAlphabet\mathbfcal{OMS}{cmsy}{b}{n}
+
+%--------------abhi commented out----------------
+
+%\renewenvironment{abstract}
+%{
+%  \vspace*{1in}
+%  \thispagestyle{plain}
+%  {\centerline{\bf Abstract}}
+%  \vspace*{.2in}
+%}
+
+%\newenvironment{acknowledgements}
+%{
+%  \thispagestyle{plain}
+%  {\centerline{\bf {\LARGE Acknowledgments}}}
+%  \vspace*{.2in}
+%}
+%-----------------------------
+\newenvironment{abbreviations}
+{
+  \ssp
+  \newpage
+  \pagestyle{plain}
+}
+
+\newenvironment{dedication}
+{
+  \newpage
+  \thispagestyle{plain}
+}
+
+\newenvironment{citations}
+{
+  \newpage
+  \thispagestyle{plain}
+  {\centerline{\bf {\LARGE Citations}}}
+  \vspace*{.2in}
+}
+
+\newenvironment{startarabicpagination}
+{
+  \setcounter{page}{1}
+  \pagenumbering{arabic}
+}
+
+%----------------------------------abhi commented------------
+
+
+%----------------------------abhi commneted ends-----------------
+% Define commands to assure consistent treatment throughout document
+\newcommand{\class}[1]{\texttt{#1}}
+\newcommand{\package}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{#1}}
+\newcommand{\BibTeX}{\textsc{Bib}\TeX}
+
+
+% New math commands
+\newcommand{\Phat}{\ensuremath{\widehat{P}}}
+\newcommand{\bPhat}{\ensuremath{\bf \widehat{P}}}
+\newcommand{\pard}{\rm d}
+\newcommand{\df}{\displaystyle\frac}
+\newcommand{\req}[1]{(\ref{#1})}
+\newcommand{\boldbb}[1]{\mbox{\boldmath $\mathbb {#1}$}}
+\newcommand{\boldcal}[1]{\mbox{\boldmath $\mathcal {#1}$}}
+\def\ri{{\rm i}}
+\def\rd{{\rm d}}
+\newcommand{\diag}[1]{{\rm diag}\ensuremath{\left [ {#1} \right ] } }
+\def\sgn{{\rm sgn}}
+\newcommand{\Prob}[1]{{\rm Prob}\ensuremath{\left [ {#1} \right ] } }
+\newcommand{\Var}[1]{{\rm Var}\ensuremath{\left [ {#1} \right ] } }
+\newcommand{\Ex}[1]{{\rm E}\ensuremath{\left \{ {#1} \right \} } }
+\newcommand{\kurt}[1]{{\rm kurt}\ensuremath{\left ( {#1} \right ) } }
+\newcommand{\cum}[4]{{\rm cum}\ensuremath{\left ( {#1},{#2},{#3},{#4} \right ) }}
+\newcommand{\tr}[1]{{\rm tr}\ensuremath{\left ( {#1} \right ) } }
+\renewcommand{\vec}[1]{{\rm vec}\ensuremath{\left ( {#1} \right ) } }
+\newcommand{\rank}[1]{{\rm rank}\ensuremath{\left ( {#1} \right ) } }
+\renewcommand{\det}[1]{{\rm det}\ensuremath{\left ( {#1} \right ) } }
+\newcommand{\dt}[1]{\ensuremath{\left \| {#1} \right \| } }
+\newcommand{\firstderi}[2]{\ensuremath{{\frac {\partial #1} {\partial #2} } } }
+\newcommand{\secondderi}[3]{\ensuremath{{\frac {\partial^2 #1} {\partial #2 \: \partial #3} } } }
+\newcommand{\cov}[2]{{\rm cov}\ensuremath{\left ( {#1},{#2} \right ) }}
+\newcommand{\corr}[2]{{\rm corr}\ensuremath{\left ( {#1},{#2} \right ) }}
+\newcommand{\half}{\ensuremath{ {\frac {1} {2}}}}
+\newcommand{\HRule}{\rule{\linewidth}{1mm}}
+\newcommand{\etr}[1]{{\rm etr}\ensuremath{\left \{ {#1} \right \} } }
+
+% New symbols
+\def\b0{\mbox{\boldmath $0$}}
+\def\bbR{\mbox{$\boldsymbol{\mathbb R}$}}
+\def\bbN{\mbox{$\boldsymbol{\mathbb N}$}}
+\def\bbC{\mbox{$\boldsymbol{\mathbb C}$}}
+\def\bbCn{\mbox{${\boldsymbol{\mathbb C}}^{N \times N}$}}
+\def\bbRn{\mbox{${\boldsymbol{\mathbb R}}^{n}$}}
+\def\bbRnn{\mbox{${\boldsymbol{\mathbb R}}^{n \times n}$}}
+\def\bbRm{\mbox{${\boldsymbol{\mathbb R}}^{m}$}}
+\def\bbRmm{\mbox{${\boldsymbol{\mathbb R}}^{m \times m}$}}
+
+% Bold small Greek letters
+\def\bvarepsilon{\mbox{\boldmath $\varepsilon$}}
+\def\balpha{\mbox{\boldmath $\alpha$}}
+\def\bbeta{\mbox{\boldmath $\beta$}}
+\def\bxi{\mbox{\boldmath $\xi$}}
+\def\brho{\mbox{\boldmath $\rho$}}
+\def\bkappa{\mbox{\boldmath $\kappa$}}
+\def\bmu{\mbox{\boldmath $\mu$}}
+\def\bnu{\mbox{\boldmath $\nu$}}
+\def\bphi{\mbox{\boldmath $\phi$}}
+\def\bpsi{\mbox{\boldmath $\psi$}}
+\def\blambda{\mbox{\boldmath $\lambda$}}
+\def\bnabla{\mbox{\boldmath $\nabla$}}
+\def\btheta{\mbox{\boldmath $\theta$}}
+\def\bvarphi{\mbox{\boldmath $\varphi$}}
+\def\beps{\mbox{\boldmath $\epsilon$}}
+
+% Bold capital Greek letters
+\def\bLambda{\mbox{\boldmath $\Lambda$}}
+\def\bOmega{\mbox{\boldmath $\Omega$}}
+\def\bOmhat{\mbox{\boldmath $\hat \Omega$}}
+\def\bPhi{\mbox{\boldmath $\Phi$}}
+\def\bPsi{\mbox{\boldmath $\Psi$}}
+\def\bDelta{\mbox{\boldmath $\Delta$}}
+\def\bTheta{\mbox{\boldmath $\Theta$}}
+\def\bDelta{\mbox{\boldmath $\Delta$}}
+\def\bSigma{\mbox{\boldmath $\Sigma$}}
+\def\bVarphi{\mbox{\boldmath $\Varphi$}}
+\def\bGamma{\mbox{\boldmath $\Gamma$}}
+
+% Other bold letters
+\def\bfrZ{\mbox{\boldmath $\mathfrak{Z}$}}
+
+% Bold face capital letters
+\def\bA{\mbox{\bf A}}
+\def\bB{\mbox{\bf B}}
+\def\bC{\mbox{\bf C}}
+\def\bD{\mbox{\bf D}}
+\def\bE{\mbox{\bf E}}
+\def\bF{\mbox{\bf F}}
+\def\bG{\mbox{\bf G}}
+\def\bH{\mbox{\bf H}}
+\def\bI{\mbox{\bf I}}
+\def\bJ{\mbox{\bf J}}
+\def\bK{\mbox{\bf K}}
+\def\bL{\mbox{\bf L}}
+\def\bM{\mbox{\bf M}}
+\def\bN{\mbox{\bf N}}
+\def\bO{\mbox{\bf O}}
+\def\bP{\mbox{\bf P}}
+\def\bQ{\mbox{\bf Q}}
+\def\bR{\mbox{\bf R}}
+\def\bS{\mbox{\bf S}}
+\def\bT{\mbox{\bf T}}
+\def\bU{\mbox{\bf U}}
+\def\bV{\mbox{\bf V}}
+\def\bW{\mbox{\bf W}}
+\def\bX{\mbox{\bf X}}
+\def\bY{\mbox{\bf Y}}
+\def\bZ{\mbox{\bf Z}}
+
+% Bold face small letters
+\def\ba{\mbox{\bf a}}
+\def\bb{\mbox{\bf b}}
+\def\bc{\mbox{\bf c}}
+\def\bd{\mbox{\bf d}}
+\def\be{\mbox{\bf e}}
+\def\bff{\mbox{\bf f}}
+\def\bg{\mbox{\bf g}}
+\def\bh{\mbox{\bf h}}
+\def\bk{\mbox{\bf k}}
+\def\bm{\mbox{\bf m}}
+\def\bn{\mbox{\bf n}}
+\def\bp{\mbox{\bf p}}
+\def\bq{\mbox{\bf q}}
+\def\br{\mbox{\bf r}}
+\def\bs{\mbox{\bf s}}
+\def\bu{\mbox{\bf u}}
+\def\bv{\mbox{\bf v}}
+\def\bw{\mbox{\bf w}}
+\def\bx{\mbox{\bf x}}
+\def\by{\mbox{\bf y}}
+\def\bz{\mbox{\bf z}}
+\def\bhatz{\ensuremath{\hat {\bf z}}}
+\def\bhatu{\ensuremath{\hat {\bf u}}}
+\def\bhatv{\ensuremath{\hat {\bf v}}}
+
+% small bold face letters with over-bar and tilde
+\def\bbarf{\mbox{$\bf \bar f$}}
+\def\bbarp{\mbox{$\bf \bar p$}}
+\def\bbarq{\mbox{$\bf \bar q$}}
+\def\bbarr{\mbox{$\bf \bar r$}}
+\def\bbaru{\mbox{$\bf \bar u$}}
+\def\bbary{\mbox{$\bf \bar y$}}
+\def\bbarz{\mbox{$\bf \bar z$}}
+\def\btildey{\mbox{$\bf \widetilde{y}$}}
+\def\btildeq{\mbox{$\bf \widetilde{q}$}}
+\def\tp{\mbox{$\widetilde{p}$}}
+\def\btildef{\mbox{$\bf \widetilde{f}$}}
+\def\btildeA{\mbox{$\bf \widetilde{A}$}}
+\def\btildeM{\mbox{$\bf \widetilde{M}$}}
+\def\btildeC{\mbox{$\bf \widetilde{C}$}}
+\def\btildeK{\mbox{$\bf \widetilde{K}$}}
+\def\btildeH{\mbox{$\bf \widetilde{H}$}}
+\def\btildeQ{\mbox{$\bf \widetilde{Q}$}}
+\def\btildeF{\mbox{$\bf \widetilde{F}$}}
+\def\bhatQ{\mbox{$\bf \widehat{Q}$}}
+
+% Bold face italic in math mode
+\def\biu{\ensuremath{\pmb u}}
+\def\bix{\ensuremath{\pmb x}}
+\def\biv{\ensuremath{\pmb v}}
+\def\biy{\ensuremath{\pmb y}}
+
+% Mathcal letters
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\G}{\mathcal{G}}
+% \newcommand{\H}{\mathcal{H}}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\J}{\mathcal{J}}
+\newcommand{\K}{\mathcal{K}}
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\N}{\mathcal{N}}
+% \newcommand{\O}{\mathcal{O}}
+% \newcommand{\P}{\mathcal{P}}
+\newcommand{\Q}{\mathcal{Q}}
+\newcommand{\R}{\mathcal{R}}
+% \newcommand{\S}{\mathcal{S}}
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\W}{\mathcal{W}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\newcommand{\Z}{\mathcal{Z}}
+
+% Bold Mathcal letters
+\def\bcalA{\mbox{\boldmath $\mathcal A$}}
+\def\bcalB{\mbox{\boldmath $\mathcal B$}}
+\def\bcalC{\mbox{\boldmath $\mathcal C$}}
+\def\bcalD{\mbox{\boldmath $\mathcal D$}}
+\def\bcalE{\mbox{\boldmath $\mathcal E$}}
+\def\bcalF{\mbox{\boldmath $\mathcal F$}}
+\def\bcalG{\mbox{\boldmath $\mathcal G$}}
+\def\bcalH{\mbox{\boldmath $\mathcal B$}}
+\def\bcalI{\mbox{\boldmath $\mathcal D$}}
+\def\bcalJ{\mbox{\boldmath $\mathcal J$}}
+\def\bcalK{\mbox{\boldmath $\mathcal K$}}
+\def\bcalL{\mbox{\boldmath $\mathcal L$}}
+\def\bcalM{\mbox{\boldmath $\mathcal M$}}
+\def\bcalN{\mbox{\boldmath $\mathcal N$}}
+\def\bcalO{\mbox{\boldmath $\mathcal O$}}
+\def\bcalP{\mbox{\boldmath $\mathcal P$}}
+\def\bcalQ{\mbox{\boldmath $\mathcal Q$}}
+\def\bcalR{\mbox{\boldmath $\mathcal R$}}
+\def\bcalS{\mbox{\boldmath $\mathcal S$}}
+\def\bcalT{\mbox{\boldmath $\mathcal T$}}
+\def\bcalU{\mbox{\boldmath $\mathcal U$}}
+\def\bcalV{\mbox{\boldmath $\mathcal V$}}
+\def\bcalW{\mbox{\boldmath $\mathcal W$}}
+\def\bcalX{\mbox{\boldmath $\mathcal X$}}
+\def\bcalY{\mbox{\boldmath $\mathcal Y$}}
+\def\bcalZ{\mbox{\boldmath $\mathcal Z$}}
+
+\def\bcx{\mbox{\boldmath $\mathcal x$}}
+\def\bcy{\mbox{\boldmath $\mathcal y$}}
+
+\newenvironment{frcseries}{\fontfamily{frc}\selectfont}{}
+\newcommand{\textfrc}[1]{{\frcseries#1}}
+\newcommand{\mathfrc}[1]{\text{\textfrc{#1}}}
+
+\newlength{\figwidth}
+\setlength{\figwidth}{0.85\textwidth}
+
+\newcommand{\mathand}{\ensuremath{\quad \text{and} \quad}}
+\newcommand{\mathor}{\ensuremath{\quad \text{or} \quad}}
+\newcommand{\prob}[1]{{\rm p}\ensuremath{\left( {#1} \right)}}
+\renewcommand{\exp}[1]{{\rm exp}\ensuremath{\left [{#1} \right]}}
+
+\newcommand{\alg}{\texttt{algorithmicx}}
+\newcommand{\old}{\texttt{algorithmic}}
+
+%\def\rd{{\rm d}}
+%\def\lb{\left (}
+%\def\rb{\right )}
+%
+%\acrodef{EKF}{extended {Kalman} filter}
+%\acrodef{MC}{Monte Carlo}
+%\acrodef{DDM}{domain decomposition method}
+%\acrodef{HPC}{high-performance computing}
+%\acrodef{CPU}{central-processing unit}
+%\acrodef{KF}{{Kalman} filter}
+%\acrodef{KDE}{kernel density estimation}
+%\acrodef{EnKF}{ensemble {Kalman} filter}
+%\acrodef{LHS}{Latin hypercube sampling}
+%\acrodef{pdf}{probability density function}
+%\acrodef{PDE}{partial differential equation}
+%\acrodef{PF}{particle filter}
+%\acrodef{SDE}{stochastic differential equation}
+%\acrodef{UKF}{unscented {Kalman} filter}
+%\acrodef{UT}{unscented transform}
+%\acrodef{MPI}{message passing interface}
+%\acrodef{SSFEM}{spectral stochastic finite element method}
