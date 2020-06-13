@@ -3,3 +3,5 @@
 *.fls
 *.spl
 *.fdb_latexmk
+*.gz
+*-eps-converted-to.pdf
