@@ -1,1 +1,1 @@
-# Paper 1: Intrusive vs non-intrusive and DD solvers
+# Domain Decomposition of Stochastic PDEs: Adaptations to Large Random Variables
